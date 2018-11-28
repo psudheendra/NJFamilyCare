@@ -1,0 +1,33 @@
+<jhi-page-ribbon></jhi-page-ribbon>
+<div>
+    <router-outlet name="navbar"></router-outlet>
+</div>
+<div class="container-fluid">
+    <!-- <div class="card jh-card">
+        <router-outlet></router-outlet>
+        <router-outlet name="popup"></router-outlet>
+    </div>
+    <jhi-footer></jhi-footer> -->
+
+    <ng-sidebar-container style="height: 80vh;">
+
+        <!-- A sidebar -->
+        <ng-sidebar [(opened)]="_opened" dock="true" dockedSize="280px" >
+            <div class="rightSideShadow" style="width: 260px; height: 98%;"> 
+                <!-- <p>Sidebar contents</p> -->
+                <jhi-sidenavmenu></jhi-sidenavmenu>
+            </div>
+            
+        </ng-sidebar>
+
+        <!-- Page content -->
+        <div ng-sidebar-content>
+            <!-- <button (click)="_toggleSidebar()">Toggle sidebar</button> -->
+            <div class="card jh-card">
+                <router-outlet></router-outlet>
+                <router-outlet name="popup"></router-outlet>
+            </div>
+        </div>
+    </ng-sidebar-container>
+    <jhi-footer></jhi-footer>
+</div>
